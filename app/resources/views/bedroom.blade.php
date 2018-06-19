@@ -21,7 +21,8 @@
             <p>Accès mobilité réduite: Non</p>
         @endif
         <p>Superficie: {{ $value->area}}m </p>
-        <a><a type="button" class="btn btn-ligth"href="../booking">Réserver</a></a>
+        <a type="button" class="btn btn-ligth"href="{{ url('bedroom')}}/{{$value->name}}/booking">Réserver</a>
+        <a type="button" class="btn btn-ligth"href="{{ url('bedrooms')}}">Liste des chambres</a>
     @endforeach
     </div>
 </div>
