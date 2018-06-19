@@ -12,13 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/bedrooms', function () {
     return view('bedrooms');
 });
 
-Route::get('/booking', function () {
+Route::get('bedrooms', function () {
+    return view('bedrooms');
+});
+
+Route::get('/', 'bedroomsController@getData');
+Route::get('bedrooms', 'bedroomsController@getData');
+Route::get('bedroom/{name}', 'bedroomsController@show');
+
+Route::get('booking', function () {
     return view('booking');
 });

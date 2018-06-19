@@ -12,3 +12,20 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+footer{
+  color: #fff;
+  background-color: #31322f;
+  ul{
+    list-style: none;
+  }
+}
+
+footer a{
+  text-decoration: underline;
+  color: #fff;
+}
+
+footer a:hover{
+  color: #808080;
+}
