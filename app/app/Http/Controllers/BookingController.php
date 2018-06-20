@@ -19,8 +19,32 @@ class BookingController extends Controller
             ->with('name', $name);
     }
 
-    public function postBooking()
+    public function index()
     {
-        $booking = Input::get('data_arrivals');
+    }
+
+    public function create()
+    {
+        return view('booking');
+    }
+
+    public function store(Request $request)
+    {
+        $booking = new Booking();
+        $booking->arrival_date = request('date_arrivals');
+        $booking->departure_date = request('date_departure');
+        $booking->customers = request('customer');
+        $booking->booking_status = $request('status');
+
+        $booking->save();
+
+        return redirect()->routes('bedroom/{name}/booking/validate');
+    }
+
+    public function save_data(Request $request)
+    {
+        Booking::create($request->all());
+
+        return redirect()->route('bedroom/{name}/booking/validate');
     }
 }

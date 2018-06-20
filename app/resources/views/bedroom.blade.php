@@ -4,7 +4,6 @@
     <h2 class="m-3 text-muted">Chambres</h2>
     <div class=" justify-content-center">
     @foreach ($rooms as $value)
-        <p> id {{ $value->id }}</p>
         <p>Nom de la chambre: {{ $value->name }}</p>
         <p>Type de lit: {{ $value->bed_type }}</p>
         <p>Type de salle de bain: {{ $value->bathroom_type }}  </p>
@@ -21,9 +20,10 @@
             <p>Accès mobilité réduite: Non</p>
         @endif
         <p>Superficie: {{ $value->area}}m </p>
-        <a type="button" class="btn btn-ligth"href="{{ url('bedroom')}}/{{$value->name}}/booking">Réserver</a>
+        <a type="button" class="btn btn-ligth"href="{{ url('bedroom')}}/{{$value->id}}/booking">Réserver</a>
         <a type="button" class="btn btn-ligth"href="{{ url('bedrooms')}}">Liste des chambres</a>
     @endforeach
     </div>
+
 </div>
 @stop

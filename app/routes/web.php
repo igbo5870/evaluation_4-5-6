@@ -29,6 +29,8 @@ Route::get('bedroom/{name}', 'bedroomsController@show');
 Route::get('booking', 'BookingController@getCustomers');
 Route::get('/bedroom/{name}/booking', 'BookingController@getCustomers');
 
+Route::post('/bedroom/{name}/booking', ['as' => '/bedroom/{name}/booking', 'uses' => 'BookingController@save_data']);
+
 Route::post('/bedroom/{name}/booking/validate', function () {
     return view('validate');
 });

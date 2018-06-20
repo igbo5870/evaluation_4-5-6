@@ -8,10 +8,11 @@ class bedroomsController extends Controller
 {
     public function getData()
     {
+        $dataRoom = DB::table('rooms')->get();
         $rooms = DB::table('rooms')->join('bed_types', 'rooms.bed_type_id', '=', 'bed_types.id')
                                     ->get();
 
-        return view('bedrooms', compact('rooms'));
+        return view('bedrooms', compact('rooms', 'dataRoom'));
     }
 
     public function show($name)
